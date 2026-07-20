@@ -4,10 +4,6 @@ Um sistema SPA (Single Page Application) moderno e responsivo desenvolvido em **
 
 ---
 
-## 📸 Demonstração do Sistema (Screenshots)
-
-> **Nota para a correção:** Substitua as imagens abaixo pelos caminhos corretos dos seus prints correspondentes dentro do repositório.
-
 ### 1. Página Principal (Home)
 ![Home](./public/HOME.png)
 
@@ -19,15 +15,15 @@ Um sistema SPA (Single Page Application) moderno e responsivo desenvolvido em **
 
 ---
 
-## 🚀 Conceitos de Vue.js Utilizados no Projeto
+## Conceitos de Vue.js utilizados no Projeto
 
-Para atender aos critérios de avaliação e garantir boas práticas de desenvolvimento, os seguintes conceitos do ecossistema Vue foram aplicados:
+Para atender aos critérios de avaliação e garantir boas práticas de desenvolvimento, os seguintes conceitos do Vue foram aplicados:
 
-### 1. Reatividade com Composition API (`<script setup>`)
+### 1. Reatividade
 Implementado em todas as Views e componentes do sistema para fornecer uma estrutura de código limpa, modular e focada na performance:
 * **Uso do `ref()`:** Utilizado na `AvaliacaoView.vue` para capturar os estados reativos locais dos inputs do formulário de cadastro (`nome`, `produtor`, `aroma`, `sabor`, `acidez`, `corpo`, `finalizacao`, `observacoes`).
 * **Uso do `computed()`:** * Na `HomeView.vue` para extrair indicadores de estatísticas em tempo real (`totalCafes`, `melhorCafe` e `ultimoCafe`).
-  * Na `RankingView.vue` para gerar de forma automatizada a ordenação decrescente do ranking a partir da maior média calculada.
+  * Na `RankingView.vue` para gerar a ordenação decrescente do ranking a partir da maior média calculada.
 
 ### 2. Diretivas Estruturais e de Dados
 * **`v-model`:** Vinculação bidirecional de dados (*two-way data binding*) aplicada no formulário de `AvaliacaoView.vue` para sincronizar os inputs do avaliador com as variáveis reativas do Vue.

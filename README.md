@@ -8,7 +8,7 @@ Um sistema SPA (Single Page Application) moderno e responsivo desenvolvido em **
 ![Home](./public/HOME.png)
 
 ### 2. Cadastro e Listagem de Avaliações
-![Avaliações](./public/prints/AVALIACOES.png)
+![Avaliações](./public/AVALIACOES.png)
 
 ### 3. Ranking Geral dos Cafés
 ![Ranking](./public/RANKING.png)

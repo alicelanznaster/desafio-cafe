@@ -6,3 +6,9 @@
 p, a{
     font-family: "Google Sans Flex", sans-serif;
 }
+
+body {
+  background-color: #FEF6EC;
+  margin: 0;
+  padding: 0;
+}

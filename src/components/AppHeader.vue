@@ -27,6 +27,7 @@ import { RouterLink } from 'vue-router';
   align-items: center;
   background-color: #FEF6EC;
   padding: 15px 35px;
+  border-bottom: 2px solid rgba(194, 140, 111, 0.655);
 }
 
 .logo{

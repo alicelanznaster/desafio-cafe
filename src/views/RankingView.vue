@@ -27,7 +27,7 @@ const ranking = computed(() => {
       <div class="total-card">
         <img src="/card-rank.svg" alt="">
           <div class="total-info">
-          <span>Total de Cafés Avaliados</span>
+          <p>Total de Cafés Avaliados</p>
 
           <strong>
             {{ cafes.length }}
@@ -52,42 +52,47 @@ const ranking = computed(() => {
 
   </div>
 
-
   <div 
     class="linha"
     v-for="(cafe,index) in ranking"
     :key="cafe.id"
   >
 
-    <span>
+    <p>
       {{ index + 1 }}
-    </span>
+    </p>
 
-
-    <span class="nome">
+    <p class="nome">
       {{ cafe.nome }}
-    </span>
+    </p>
 
-
-    <span>
+    <p class="produtor">
       {{ cafe.produtor }}
-    </span>
+    </p>
 
-
-<span>
-  {{ calcularNota(cafe).toFixed(1) }}
-</span>
+    <p class="nota">
+      {{ calcularNota(cafe).toFixed(1) }}
+    </p>
 
     <button class="btn-detalhes">
       Ver Detalhes
     </button>
-
-
   </div>
+  </section>
 
-
-</section>
-
+  <section class="participar">
+    <div class="texto">
+      <img src="/medalha.svg" alt="Megafone">
+      <div>
+        <h3>Como funciona a pontuação?</h3>
+        <p>
+          As notas são baseadas na metodologia SCA (Specialty Coffee Association). 
+          Cada critério recebe uma nota de 0 a 10 e a média final determina a classificação.
+        </p>
+      </div>
+    </div>
+    <img class="fazenda" src="/img-banner.svg" alt="Fazenda">
+  </section>
 
   </main>
 </template>
@@ -97,7 +102,6 @@ const ranking = computed(() => {
   width: 95%;
   max-width: 1200px;
   margin: 40px auto;
-  font-family: 'Inter', sans-serif; 
   color: #333;
 }
 
@@ -122,14 +126,14 @@ const ranking = computed(() => {
 .info h1 {
   margin: 0;
   color: #5c3818;
-  font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 30px;  
 }
 
 .titulo p {
   margin: 6px 0 0 0;
   color: #666;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .total-card {
@@ -142,22 +146,20 @@ const ranking = computed(() => {
   padding: 12px 24px;
 }
 
-.total-icon {
-  width: 32px;
-  height: 32px;
+.total-card img{
+  width: 60px;
+  height: 60px;
 }
 
 .total-info {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
-.total-info span {
-  font-size: 11px;
+.total-info p {
+  font-size: 15px;
   color: #888;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 .total-info strong {
@@ -165,7 +167,6 @@ const ranking = computed(() => {
   color: #333;
   line-height: 1.1;
 }
-
 
 .cabecalho, .linha {
   display: grid;
@@ -175,20 +176,21 @@ const ranking = computed(() => {
 }
 
 .cabecalho {
-  border-bottom: 2px solid #f0f0f0;
-  margin-bottom: 10px;
+  border-bottom: 2px solid #e8e2e2;
+  margin-bottom: 5px;
 }
 
 .cabecalho span {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: #888;
 }
 
+
 .linha {
   background-color: #fff;
-  border-radius: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
+  border-radius: 12px;
   border: 1px solid #f3f3f3;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -197,55 +199,15 @@ const ranking = computed(() => {
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
-.posicao {
-  font-size: 16px;
-  font-weight: bold;
-  color: #666;
-}
-
-.cafe-detalhe {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.cafe-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid #eee;
-}
-
 .nome {
   color: #222;
   font-size: 15px;
 }
 
-.produtor {
+.produtor,.nota{
   color: #555;
   font-size: 14px;
 }
-
-/* Nota e Estrelas */
-.nota-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nota {
-  font-size: 16px;
-  color: #2b773c;
-  font-weight: 700;
-}
-
-.estrelas {
-  color: #ffb800;
-  letter-spacing: 2px;
-  font-size: 14px;
-}
-
 
 .btn-detalhes {
   background-color: transparent;
@@ -257,7 +219,7 @@ const ranking = computed(() => {
   font-weight: 500;
   cursor: pointer;
   width: 100%;
-  transition: all 0.2s;
+  transition: 0.2s;
 }
 
 .btn-detalhes:hover {
@@ -265,23 +227,43 @@ const ranking = computed(() => {
   border-color: #bbb;
 }
 
-
-.como-funciona {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px dashed #e0e0e0;
+.participar{
+  width: 100%;
+  max-width: 1200px;
+  margin: 35px auto 50px;
+  background: #F8F4F1;
+  border-radius: 15px;
+  padding: 25px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
-.footer-texto h3 {
-  font-size: 14px;
-  color: #5c3818;
-  margin: 0 0 6px 0;
+.texto{
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.footer-texto p {
-  font-size: 12px;
-  color: #777;
-  line-height: 1.6;
+.texto img{
+  width: 45px;
+}
+
+.texto h3{
   margin: 0;
+  font-size: 18px;
+  color: #5e2b16;
+}
+
+.texto p{
+  margin-top: 5px;
+  color: #666;
+  line-height: 1.5;
+  max-width: 650px;
+}
+
+.fazenda{
+  width: 240px;
 }
 </style>

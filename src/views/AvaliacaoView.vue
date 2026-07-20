@@ -139,8 +139,12 @@ function adicionarCafe(){
           <button @click.prevent="adicionarCafe">
             Avaliar Café
           </button>
+          
         </form>
+        
+        
       </section>
+      
     </div>
   </main> 
 </template>
@@ -154,6 +158,11 @@ function adicionarCafe(){
 
 .topo{
   margin-bottom: 30px;
+}
+
+.topo p{
+  color: #555;
+  font-size: 18px;
 }
 
 .titulo {
@@ -170,15 +179,15 @@ function adicionarCafe(){
 .titulo h1{
   margin: 0;
   color: #6b3f22;
+  font-weight: 600;
+  font-size: 30px;
 }
 
-.topo p{
-  color: #555;
-}
 
 .conteudo{
   display: flex;
   gap: 30px;
+  align-items: flex-start;
 }
 
 .lista{
@@ -190,35 +199,10 @@ function adicionarCafe(){
 }
 
 .lista h2{
-  color: black;
+  color: #6b3f22;
   font-size: 25px;
   font-weight: 600;
   margin-top: 0;
-}
-
-.formulario{
-  flex: 1.3;
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-
-.form {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.form h2 {
-  color: #6b3f22;
-  margin: 0;
-}
-
-.form img {
-  width: 30px;
-  height: 30px;
 }
 
 .item{
@@ -231,16 +215,6 @@ function adicionarCafe(){
 
 .item:last-child{
   border: none;
-}
-
-.info-cadastro {
-  display: flex;
-  gap: 15px;
-  width: 100%;
-}
-
-.info-cadastro label {
-  flex: 1;
 }
 
 .info {
@@ -281,6 +255,14 @@ function adicionarCafe(){
   color: #6b3f22;
 }
 
+.formulario{
+  flex: 1.3;
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
 .formulario form{
   display: flex;
   flex-direction: column;
@@ -293,6 +275,30 @@ function adicionarCafe(){
   gap: 8px;
   color: #555;
   font-weight: 500;
+}
+
+.formulario h3{
+  color: #6b3f22;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 600;
+} 
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form h2 {
+  color: #6b3f22;
+  margin: 0;
+  font-weight: 600;
+}
+
+.form img {
+  width: 30px;
+  height: 30px;
 }
 
 input,
@@ -308,17 +314,21 @@ textarea{
   resize: none;
 }
 
+.info-cadastro {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.info-cadastro label {
+  flex: 1;
+}
+
 .notas{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
-
-.formulario h3{
-  color: #6b3f22;
-  margin-top: 10px;
-  margin-bottom: 5px;
-} 
 
 button{
   margin-top: 15px;
